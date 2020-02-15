@@ -9,6 +9,7 @@ target 'Timeline' do
   pod 'R.swift'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Firebase/Auth'
 
   target 'TimelineTests' do
     inherit! :search_paths
