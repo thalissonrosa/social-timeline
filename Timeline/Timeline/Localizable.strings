@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Timeline
+
+  Created by Thalisson da Rosa on 15/02/20.
+  Copyright © 2020 Thalisson da Rosa. All rights reserved.
+*/
+
+// MARK: Account
+"confirmPassword" = "Confirm Password";
+"createAccount" = "Create Account";
+"email" = "Email";
+"login" = "Login";
+"missingEmailPassword" = "Missing email/password";
+"password" = "Password";
+"passwordMismatch" = "Password and Confirm Password mismatch";
+
+//MARK: General
+"welcome" = "Welcome to Social Timeline";
