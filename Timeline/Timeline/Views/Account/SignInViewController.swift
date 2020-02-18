@@ -37,8 +37,14 @@ final class SignInViewController: UIViewController {
 
     @IBAction func loginPressed() {
         viewModel.login().subscribe(onNext: { user in
-            print(user.username)
-            //TODO: Move to the Timeline screen
+
+            guard let timelineController = R.storyboard.timeline.timelineViewController() else {
+                return
+            }
+            let viewModel = TimelineViewModel(user: user)
+            timelineController.viewModel = viewModel
+            self.navigationController?.pushViewController(timelineController,
+                                                          animated: true)
         }, onError: { error in
             //TODO: Display the error to the user
         }).disposed(by: disposeBag)

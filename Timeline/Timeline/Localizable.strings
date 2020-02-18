@@ -6,7 +6,7 @@
   Copyright © 2020 Thalisson da Rosa. All rights reserved.
 */
 
-// MARK: Account
+// MARK: - Account
 "confirmPassword" = "Confirm Password";
 "createAccount" = "Create Account";
 "email" = "Email";
@@ -15,5 +15,10 @@
 "password" = "Password";
 "passwordMismatch" = "Password and Confirm Password mismatch";
 
-//MARK: General
+//MARK: - General
 "welcome" = "Welcome to Social Timeline";
+
+//MARK: - Timeline
+"title" = "Timeline";
+"newPost" = "New Post";
+"logout" = "Logout";

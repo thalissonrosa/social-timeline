@@ -13,6 +13,7 @@ import RxSwift
 final class CreateAccountViewModel {
 
     // MARK: - Properties
+    
     private let accountService: AccountService
     var email = BehaviorRelay<String?>(value: "")
     var password = BehaviorRelay<String?>(value: "")

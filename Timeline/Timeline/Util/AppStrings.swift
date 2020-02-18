@@ -10,7 +10,7 @@ import UIKit
 
 enum AppStrings: String {
 
-    // MARK: Account
+    // MARK: - Account
     case accountCreation
     case confirmPassword
     case createAccount
@@ -20,8 +20,13 @@ enum AppStrings: String {
     case password
     case passwordMismatch
 
-    //MARK: General
+    //MARK: - General
     case welcome
+
+    //MARK: - Timeline
+    case title
+    case newPost
+    case logout
 
     var localized: String {
         return NSLocalizedString(self.rawValue, comment: "")

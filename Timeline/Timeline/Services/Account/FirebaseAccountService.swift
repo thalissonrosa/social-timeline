@@ -43,4 +43,17 @@ struct FirebaseAccountService: AccountService {
             return Disposables.create()
         }
     }
+
+    func logout() -> Completable {
+        return Completable.create { completable in
+            do {
+                try Auth.auth().signOut()
+                completable(.completed)
+            } catch {
+                let timelineError = TimelineError(message: error.localizedDescription, errorCode: .authError)
+                completable(.error(timelineError))
+            }
+            return Disposables.create()
+        }
+    }
 }

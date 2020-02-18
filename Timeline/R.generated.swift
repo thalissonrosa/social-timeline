@@ -113,12 +113,14 @@ struct R: Rswift.Validatable {
   #endif
 
   #if os(iOS) || os(tvOS)
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `Account`.
     static let account = _R.storyboard.account()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Timeline`.
+    static let timeline = _R.storyboard.timeline()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "Account", bundle: ...)`
@@ -131,6 +133,13 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Timeline", bundle: ...)`
+    static func timeline(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.timeline)
     }
     #endif
 
@@ -152,9 +161,29 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `TimelineTableViewCell`.
+    static let timelineTableViewCell = _R.nib._TimelineTableViewCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "TimelineTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.timelineTableViewCell) instead")
+    static func timelineTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.timelineTableViewCell)
+    }
+    #endif
+
+    static func timelineTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TimelineTableViewCell? {
+      return R.nib.timelineTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TimelineTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
       /// Value: Confirm Password
       static let confirmPassword = Rswift.StringResource(key: "confirmPassword", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
@@ -164,12 +193,18 @@ struct R: Rswift.Validatable {
       static let email = Rswift.StringResource(key: "email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Login
       static let login = Rswift.StringResource(key: "login", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Logout
+      static let logout = Rswift.StringResource(key: "logout", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Missing email/password
       static let missingEmailPassword = Rswift.StringResource(key: "missingEmailPassword", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: New Post
+      static let newPost = Rswift.StringResource(key: "newPost", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Password
       static let password = Rswift.StringResource(key: "password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Password and Confirm Password mismatch
       static let passwordMismatch = Rswift.StringResource(key: "passwordMismatch", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Timeline
+      static let title = Rswift.StringResource(key: "title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Welcome to Social Timeline
       static let welcome = Rswift.StringResource(key: "welcome", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
@@ -225,6 +260,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("login", bundle: bundle, comment: "")
       }
 
+      /// Value: Logout
+      static func logout(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("logout", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "logout"
+        }
+
+        return NSLocalizedString("logout", bundle: bundle, comment: "")
+      }
+
       /// Value: Missing email/password
       static func missingEmailPassword(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -236,6 +284,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("missingEmailPassword", bundle: bundle, comment: "")
+      }
+
+      /// Value: New Post
+      static func newPost(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("newPost", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "newPost"
+        }
+
+        return NSLocalizedString("newPost", bundle: bundle, comment: "")
       }
 
       /// Value: Password
@@ -262,6 +323,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("passwordMismatch", bundle: bundle, comment: "")
+      }
+
+      /// Value: Timeline
+      static func title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "title"
+        }
+
+        return NSLocalizedString("title", bundle: bundle, comment: "")
       }
 
       /// Value: Welcome to Social Timeline
@@ -304,6 +378,23 @@ struct _R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _TimelineTableViewCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "TimelineTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> TimelineTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? TimelineTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
@@ -311,6 +402,9 @@ struct _R: Rswift.Validatable {
       #endif
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try timeline.validate()
       #endif
     }
 
@@ -352,6 +446,26 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+      }
+
+      fileprivate init() {}
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct timeline: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "Timeline"
+      let timelineViewController = StoryboardViewControllerResource<TimelineViewController>(identifier: "TimelineViewController")
+
+      func timelineViewController(_: Void = ()) -> TimelineViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: timelineViewController)
+      }
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+        if _R.storyboard.timeline().timelineViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'timelineViewController' could not be loaded from storyboard 'Timeline' as 'TimelineViewController'.") }
       }
 
       fileprivate init() {}
