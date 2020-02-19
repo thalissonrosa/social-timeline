@@ -100,6 +100,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cic-sW-hkR">
                                 <rect key="frame" x="363" y="18.5" width="31" height="30"/>
                                 <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="postPressed" destination="oIi-SV-G0Y" eventType="touchUpInside" id="VGA-T8-2tN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-7W-o1f">
                                 <rect key="frame" x="20" y="18.5" width="48" height="30"/>

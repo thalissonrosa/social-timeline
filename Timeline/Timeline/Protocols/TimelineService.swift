@@ -10,6 +10,6 @@ import RxSwift
 
 protocol TimelineService {
 
-    func createPost(_ post, from: User) -> Completable
+    func createPost(_ message: String, from user: User) -> Completable
     func retrievePosts() -> Observable<[Post]>
 }

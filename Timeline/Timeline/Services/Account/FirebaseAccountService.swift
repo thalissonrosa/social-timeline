@@ -18,12 +18,12 @@ struct FirebaseAccountService: AccountService {
                 guard let responseUser = result?.user else {
                     let error = TimelineError(message: error?.localizedDescription,
                                               errorCode: .authError)
-                    observer.onError(error)
+                    observer.on(.error(error))
                     return
                 }
                 let firebaseUser = FirebaseUser(user: responseUser)
-                observer.onNext(firebaseUser)
-                observer.onCompleted()
+                observer.on(.next(firebaseUser))
+                observer.on(.completed)
             }
             return Disposables.create()
         }

@@ -28,6 +28,6 @@ class TimelineTableViewCell: UITableViewCell {
 
     func configure(post: Post) {
         messageLabel.text = post.message
-        authorLabel.text = post.userEmail
+        authorLabel.text = post.user
     }
 }

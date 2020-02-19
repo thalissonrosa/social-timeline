@@ -16,6 +16,7 @@
 		0745EC2523FCD24C0084A0B7 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EC2423FCD24C0084A0B7 /* NewPostViewController.swift */; };
 		0745EC2723FCD2580084A0B7 /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EC2623FCD2580084A0B7 /* NewPostViewModel.swift */; };
 		0745EC2923FCD77A0084A0B7 /* TimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EC2823FCD77A0084A0B7 /* TimelineService.swift */; };
+		0745EC2B23FCD9760084A0B7 /* FirebaseTimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EC2A23FCD9760084A0B7 /* FirebaseTimelineService.swift */; };
 		07ACE17423F8CD1B004EAF89 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACE17323F8CD1B004EAF89 /* R.generated.swift */; };
 		07ACE17723F8CF41004EAF89 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACE17623F8CF41004EAF89 /* User.swift */; };
 		07ACE17A23F8D0B5004EAF89 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACE17923F8D0B5004EAF89 /* FirebaseUser.swift */; };
@@ -59,6 +60,7 @@
 		0745EC2423FCD24C0084A0B7 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		0745EC2623FCD2580084A0B7 /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
 		0745EC2823FCD77A0084A0B7 /* TimelineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineService.swift; sourceTree = "<group>"; };
+		0745EC2A23FCD9760084A0B7 /* FirebaseTimelineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTimelineService.swift; sourceTree = "<group>"; };
 		07ACE17323F8CD1B004EAF89 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		07ACE17623F8CF41004EAF89 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07ACE17923F8D0B5004EAF89 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				0707EB2623F88F390090912F /* Account */,
+				0745EC2A23FCD9760084A0B7 /* FirebaseTimelineService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -400,7 +403,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -484,6 +487,7 @@
 				0707EB2523F8888A0090912F /* CreateAccountViewModel.swift in Sources */,
 				0745EC2923FCD77A0084A0B7 /* TimelineService.swift in Sources */,
 				07ACE19123FB830B004EAF89 /* TimelineViewModel.swift in Sources */,
+				0745EC2B23FCD9760084A0B7 /* FirebaseTimelineService.swift in Sources */,
 				07DA85C823F86F6500442AF2 /* SignInViewController.swift in Sources */,
 				0707EB2A23F88F5A0090912F /* AccountService.swift in Sources */,
 				07ACE18E23FB82ED004EAF89 /* TimelineTableViewCell.swift in Sources */,

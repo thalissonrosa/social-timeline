@@ -11,6 +11,7 @@ import UIKit
 enum ErrorCode {
     case genericError
     case authError
+    case timelineError
 }
 
 protocol GenericError: Error {

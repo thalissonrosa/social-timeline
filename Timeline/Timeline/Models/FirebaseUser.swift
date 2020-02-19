@@ -10,11 +10,11 @@ import Firebase
 
 struct FirebaseUser: User {
 
-    var username: String?
+    var username: String
     var identifier: String
 
     init(user: Firebase.User) {
-        username = user.email
+        username = user.email ?? ""
         identifier = user.uid
     }
 }

@@ -26,14 +26,11 @@ final class TimelineViewModel {
         self.user = user
         self.accountService = accountService
         let post1 = Post(message: "teste 1",
-                         userEmail: "talico15@gmail.com",
-                         timestamp: "")
+                         user: "talico15@gmail.com")
         let post2 = Post(message: "teste 2",
-                         userEmail: "fulano@gmail.com",
-                         timestamp: "")
+                         user: "fulano@gmail.com")
         let post3 = Post(message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien sapien, imperdiet id urna et, faucibus tempus augue. Nulla posuere molestie hendrerit. Donec metus massa, rhoncus eget arcu ut, tempus suscipit tellus.",
-                         userEmail: "loremIpsum@gmail.com",
-                         timestamp: "")
+                         user: "loremIpsum@gmail.com")
         posts.append(post1)
         posts.append(post2)
         posts.append(post3)
@@ -46,7 +43,7 @@ final class TimelineViewModel {
     }
 
     func canErasePostAt(index: Int) -> Bool {
-        return posts[index].userEmail == user.username
+        return posts[index].user == user.username
     }
 
     func postAt(index: Int) -> Post {

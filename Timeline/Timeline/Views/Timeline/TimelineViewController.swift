@@ -48,8 +48,13 @@ class TimelineViewController: UIViewController {
     }
 
     @IBAction func newPostPressed() {
-        guard let viewController = R.storyboard.timeline.newPostViewController() else { return }
-        navigationController?.present(viewController, animated: true)
+        guard let user = viewModel?.user else {
+            fatalError("User not configured")
+        }
+        guard let newPostViewController = R.storyboard.timeline.newPostViewController() else { return }
+        let viewModel = NewPostViewModel(user: user)
+        newPostViewController.viewModel = viewModel
+        navigationController?.present(newPostViewController, animated: true)
     }
 }
 
