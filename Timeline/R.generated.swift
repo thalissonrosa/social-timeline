@@ -456,7 +456,12 @@ struct _R: Rswift.Validatable {
     struct timeline: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "Timeline"
+      let newPostViewController = StoryboardViewControllerResource<NewPostViewController>(identifier: "NewPostViewController")
       let timelineViewController = StoryboardViewControllerResource<TimelineViewController>(identifier: "TimelineViewController")
+
+      func newPostViewController(_: Void = ()) -> NewPostViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: newPostViewController)
+      }
 
       func timelineViewController(_: Void = ()) -> TimelineViewController? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: timelineViewController)
@@ -465,6 +470,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.timeline().newPostViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newPostViewController' could not be loaded from storyboard 'Timeline' as 'NewPostViewController'.") }
         if _R.storyboard.timeline().timelineViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'timelineViewController' could not be loaded from storyboard 'Timeline' as 'TimelineViewController'.") }
       }
 

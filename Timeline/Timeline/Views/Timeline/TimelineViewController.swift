@@ -48,7 +48,8 @@ class TimelineViewController: UIViewController {
     }
 
     @IBAction func newPostPressed() {
-
+        guard let viewController = R.storyboard.timeline.newPostViewController() else { return }
+        navigationController?.present(viewController, animated: true)
     }
 }
 

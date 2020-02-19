@@ -13,6 +13,9 @@
 		0707EB2D23F8905A0090912F /* FirebaseAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707EB2C23F8905A0090912F /* FirebaseAccountService.swift */; };
 		0707EB3023F8B3990090912F /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0707EB2F23F8B3990090912F /* AppStrings.swift */; };
 		0707EB3223F8B3F30090912F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0707EB3123F8B3F30090912F /* Localizable.strings */; };
+		0745EC2523FCD24C0084A0B7 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EC2423FCD24C0084A0B7 /* NewPostViewController.swift */; };
+		0745EC2723FCD2580084A0B7 /* NewPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EC2623FCD2580084A0B7 /* NewPostViewModel.swift */; };
+		0745EC2923FCD77A0084A0B7 /* TimelineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745EC2823FCD77A0084A0B7 /* TimelineService.swift */; };
 		07ACE17423F8CD1B004EAF89 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACE17323F8CD1B004EAF89 /* R.generated.swift */; };
 		07ACE17723F8CF41004EAF89 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACE17623F8CF41004EAF89 /* User.swift */; };
 		07ACE17A23F8D0B5004EAF89 /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACE17923F8D0B5004EAF89 /* FirebaseUser.swift */; };
@@ -53,6 +56,9 @@
 		0707EB2C23F8905A0090912F /* FirebaseAccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAccountService.swift; sourceTree = "<group>"; };
 		0707EB2F23F8B3990090912F /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		0707EB3123F8B3F30090912F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		0745EC2423FCD24C0084A0B7 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		0745EC2623FCD2580084A0B7 /* NewPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewModel.swift; sourceTree = "<group>"; };
+		0745EC2823FCD77A0084A0B7 /* TimelineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineService.swift; sourceTree = "<group>"; };
 		07ACE17323F8CD1B004EAF89 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		07ACE17623F8CF41004EAF89 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07ACE17923F8D0B5004EAF89 /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				0707EB2923F88F5A0090912F /* AccountService.swift */,
+				0745EC2823FCD77A0084A0B7 /* TimelineService.swift */,
 				07ACE17623F8CF41004EAF89 /* User.swift */,
 			);
 			path = Protocols;
@@ -192,6 +199,8 @@
 				07ACE18723FB828B004EAF89 /* Cells */,
 				07ACE18123FB8135004EAF89 /* TimelineViewController.swift */,
 				07ACE19023FB830B004EAF89 /* TimelineViewModel.swift */,
+				0745EC2423FCD24C0084A0B7 /* NewPostViewController.swift */,
+				0745EC2623FCD2580084A0B7 /* NewPostViewModel.swift */,
 			);
 			path = Timeline;
 			sourceTree = "<group>";
@@ -468,9 +477,12 @@
 				0707EB2D23F8905A0090912F /* FirebaseAccountService.swift in Sources */,
 				0707EB2323F8887A0090912F /* CreateAccountViewController.swift in Sources */,
 				07DA85EC23F884CD00442AF2 /* TimelineError.swift in Sources */,
+				0745EC2723FCD2580084A0B7 /* NewPostViewModel.swift in Sources */,
 				07DA85EA23F87BBB00442AF2 /* SignInViewModel.swift in Sources */,
 				07ACE19323FB8343004EAF89 /* Post.swift in Sources */,
+				0745EC2523FCD24C0084A0B7 /* NewPostViewController.swift in Sources */,
 				0707EB2523F8888A0090912F /* CreateAccountViewModel.swift in Sources */,
+				0745EC2923FCD77A0084A0B7 /* TimelineService.swift in Sources */,
 				07ACE19123FB830B004EAF89 /* TimelineViewModel.swift in Sources */,
 				07DA85C823F86F6500442AF2 /* SignInViewController.swift in Sources */,
 				0707EB2A23F88F5A0090912F /* AccountService.swift in Sources */,

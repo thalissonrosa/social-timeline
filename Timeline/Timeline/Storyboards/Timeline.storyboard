@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Timeline-->
+        <!--Timeline View Controller-->
         <scene sceneID="2vy-V0-nD6">
             <objects>
                 <viewController storyboardIdentifier="TimelineViewController" id="ykb-Zj-6qK" customClass="TimelineViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,19 +68,92 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jBE-TD-ICL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Timeline" id="m9d-Jh-0gB">
+                    <navigationItem key="navigationItem" id="m9d-Jh-0gB">
                         <barButtonItem key="backBarButtonItem" title=" " id="sp6-Qz-sm9"/>
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Jva-VZ-TVX"/>
-                        <barButtonItem key="rightBarButtonItem" title="New Post" id="jv3-qG-jnN"/>
                     </navigationItem>
                     <connections>
                         <outlet property="logoutButton" destination="65Y-9N-TmR" id="Imy-ex-OAm"/>
                         <outlet property="newPostButton" destination="9rP-ax-Z31" id="crH-yz-dLV"/>
                         <outlet property="timelineTableView" destination="yzo-RL-wfm" id="Gey-yw-OnV"/>
                         <outlet property="titleLabel" destination="24G-UI-oEv" id="Pk9-FK-mWn"/>
+                        <segue destination="oIi-SV-G0Y" kind="presentation" id="rsh-fj-JnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VkE-Jk-aCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="101.78571428571428"/>
+        </scene>
+        <!--New Post View Controller-->
+        <scene sceneID="Jc3-xq-2Hd">
+            <objects>
+                <viewController storyboardIdentifier="NewPostViewController" id="oIi-SV-G0Y" customClass="NewPostViewController" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TMS-dq-fNk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ6-mi-rZs">
+                                <rect key="frame" x="166" y="20" width="82" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cic-sW-hkR">
+                                <rect key="frame" x="363" y="18.5" width="31" height="30"/>
+                                <state key="normal" title="Post"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ie-7W-o1f">
+                                <rect key="frame" x="20" y="18.5" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPressed" destination="oIi-SV-G0Y" eventType="touchUpInside" id="BRC-6C-R2T"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your post here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4gG-SL-6ak">
+                                <rect key="frame" x="20" y="61.5" width="374" height="746.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GU4-qs-Yyo" firstAttribute="trailing" secondItem="4gG-SL-6ak" secondAttribute="trailing" constant="20" id="1n6-Qg-vkC"/>
+                            <constraint firstItem="4gG-SL-6ak" firstAttribute="top" secondItem="pJ6-mi-rZs" secondAttribute="bottom" constant="20" id="4cN-rf-A6c"/>
+                            <constraint firstItem="cic-sW-hkR" firstAttribute="firstBaseline" secondItem="9Ie-7W-o1f" secondAttribute="firstBaseline" id="DPA-t2-iwr"/>
+                            <constraint firstItem="9Ie-7W-o1f" firstAttribute="firstBaseline" secondItem="pJ6-mi-rZs" secondAttribute="firstBaseline" constant="2" id="Lg6-XU-kCP"/>
+                            <constraint firstItem="4gG-SL-6ak" firstAttribute="leading" secondItem="GU4-qs-Yyo" secondAttribute="leading" constant="20" id="Z7Y-hh-gnS"/>
+                            <constraint firstItem="pJ6-mi-rZs" firstAttribute="top" secondItem="GU4-qs-Yyo" secondAttribute="top" constant="20" id="axp-c7-Wbh"/>
+                            <constraint firstItem="GU4-qs-Yyo" firstAttribute="trailing" secondItem="cic-sW-hkR" secondAttribute="trailing" constant="20" id="byq-3t-uiF"/>
+                            <constraint firstItem="9Ie-7W-o1f" firstAttribute="leading" secondItem="GU4-qs-Yyo" secondAttribute="leading" constant="20" id="fLI-FV-9CZ"/>
+                            <constraint firstItem="pJ6-mi-rZs" firstAttribute="centerX" secondItem="GU4-qs-Yyo" secondAttribute="centerX" id="h42-zG-sPq"/>
+                            <constraint firstItem="GU4-qs-Yyo" firstAttribute="bottom" secondItem="4gG-SL-6ak" secondAttribute="bottom" id="qtf-0D-49k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GU4-qs-Yyo"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="9Ie-7W-o1f" id="MVU-E4-uD4"/>
+                        <outlet property="headerLabel" destination="pJ6-mi-rZs" id="cnb-Tr-ac9"/>
+                        <outlet property="postButton" destination="cic-sW-hkR" id="y7w-yh-6W9"/>
+                        <outlet property="postTextField" destination="4gG-SL-6ak" id="XyG-XP-hs3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ncf-MZ-pOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2870" y="102"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nkf-Jh-3fY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="zl6-ud-a0Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="n4M-rr-979">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ykb-Zj-6qK" kind="relationship" relationship="rootViewController" id="Lrw-Hc-hao"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kef-Pn-Djg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="101.78571428571428"/>
         </scene>
