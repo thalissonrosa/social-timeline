@@ -12,6 +12,7 @@ struct Post {
 
     let message: String
     let user: String
+    let timestamp: Double
 }
 
 extension Post {
@@ -19,13 +20,15 @@ extension Post {
     func toAnyObject() -> Any {
         return [
             "message": message,
-            "user": user
+            "user": user,
+            "timestamp": timestamp
         ]
     }
 
     static func fromDictionary(_ dict: NSDictionary) -> Post? {
         guard let message = dict["message"] as? String,
-            let user = dict["user"] as? String else { return nil }
-        return Post(message: message, user: user)
+            let user = dict["user"] as? String,
+            let timestamp = dict["timestamp"] as? Double else { return nil }
+        return Post(message: message, user: user, timestamp: timestamp)
      }
 }

@@ -11,5 +11,6 @@ import RxSwift
 protocol TimelineService {
 
     func createPost(_ message: String, from user: User) -> Completable
-    func retrievePosts() -> Observable<[Post]>
+    func retrievePosts() -> Single<[Post]>
+    func startLiveUpdating() -> Observable<Post>
 }

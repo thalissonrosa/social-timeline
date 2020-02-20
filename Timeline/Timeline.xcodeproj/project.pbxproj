@@ -112,18 +112,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0707EB2623F88F390090912F /* Account */ = {
-			isa = PBXGroup;
-			children = (
-				0707EB2C23F8905A0090912F /* FirebaseAccountService.swift */,
-			);
-			path = Account;
-			sourceTree = "<group>";
-		};
 		0707EB2B23F890340090912F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				0707EB2623F88F390090912F /* Account */,
+				0707EB2C23F8905A0090912F /* FirebaseAccountService.swift */,
 				0745EC2A23FCD9760084A0B7 /* FirebaseTimelineService.swift */,
 			);
 			path = Services;

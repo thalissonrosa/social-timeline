@@ -35,6 +35,7 @@ class TimelineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocalization()
+        retrievePosts()
     }
 
     // MARK: - IBAction
@@ -44,7 +45,7 @@ class TimelineViewController: UIViewController {
             self?.navigationController?.popViewController(animated: true)
         }, onError: { error in
             //TODO: Display error
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 
     @IBAction func newPostPressed() {
@@ -66,6 +67,25 @@ private extension TimelineViewController {
         titleLabel.text = AppStrings.title.localized
         logoutButton.setTitle(AppStrings.logout.localized, for: .normal)
         newPostButton.setTitle(AppStrings.newPost.localized, for: .normal)
+    }
+
+    func retrievePosts() {
+        viewModel?.retrieveAllPosts().asCompletable().subscribe(onCompleted: { [weak self] in
+            self?.timelineTableView.reloadData()
+            self?.startLiveUpdating()
+        }, onError: { error in
+            //TODO: Display error to the user
+            print("ERROR")
+        }).disposed(by: disposeBag)
+    }
+
+    func startLiveUpdating() {
+        viewModel?.newPosts.subscribe(onNext: { [weak self] _ in
+            guard let indexPath = self?.viewModel?.insertPostIndexPath else { return }
+            self?.timelineTableView.insertRows(at: [indexPath], with: .automatic)
+        }, onError: { error in
+            //TODO: Handle error
+        }).disposed(by: disposeBag)
     }
 }
 

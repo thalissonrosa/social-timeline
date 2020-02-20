@@ -15,25 +15,31 @@ final class TimelineViewModel {
     
     let user: User
     let accountService: AccountService
+    let timelineService: TimelineService
     private var posts: [Post] = []
     var numberOfPosts: Int {
         return posts.count
     }
+    var newPosts: Observable<Post> {
+        //Firebase will always return the most recent data but we already retrieved it earlier, so we can ignore the first value if posts.count > 0
+        return timelineService.startLiveUpdating()
+            .skip(posts.count > 0 ? 1 : 0)
+            .do(onNext: { [weak self] post in
+                self?.posts.insert(post, at: 0)
+        })
+    }
+    var insertPostIndexPath: IndexPath {
+        return IndexPath(item: 0, section: 0)
+    }
 
     // MARK: - Init
 
-    init(user: User, accountService: AccountService = FirebaseAccountService()) {
+    init(user: User,
+         accountService: AccountService = FirebaseAccountService(),
+         timelineService: TimelineService = FirebaseTimelineService()) {
         self.user = user
         self.accountService = accountService
-        let post1 = Post(message: "teste 1",
-                         user: "talico15@gmail.com")
-        let post2 = Post(message: "teste 2",
-                         user: "fulano@gmail.com")
-        let post3 = Post(message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sapien sapien, imperdiet id urna et, faucibus tempus augue. Nulla posuere molestie hendrerit. Donec metus massa, rhoncus eget arcu ut, tempus suscipit tellus.",
-                         user: "loremIpsum@gmail.com")
-        posts.append(post1)
-        posts.append(post2)
-        posts.append(post3)
+        self.timelineService = timelineService
     }
 
     // MARK: - Functions
@@ -52,5 +58,14 @@ final class TimelineViewModel {
 
     func removePostAt(index: Int) {
         posts.remove(at: index)
+    }
+
+    func retrieveAllPosts() -> Single<[Post]> {
+        return timelineService.retrievePosts()
+            .map { posts -> [Post] in
+                return posts.sorted(by: { $0.timestamp > $1.timestamp })
+            }.do(onSuccess: { [weak self] posts in
+                self?.posts = posts
+            })
     }
 }
