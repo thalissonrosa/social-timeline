@@ -80,9 +80,14 @@ private extension TimelineViewController {
     }
 
     func startLiveUpdating() {
-        viewModel?.newPosts.subscribe(onNext: { [weak self] _ in
-            guard let indexPath = self?.viewModel?.insertPostIndexPath else { return }
-            self?.timelineTableView.insertRows(at: [indexPath], with: .automatic)
+        viewModel?.newPosts.subscribe(onNext: { [weak self] (_, type, index) in
+            let indexPath = IndexPath(item: index, section: 0)
+            switch type {
+            case .added:
+                self?.timelineTableView.insertRows(at: [indexPath], with: .automatic)
+            case .removed:
+                self?.timelineTableView.deleteRows(at: [indexPath], with: .automatic)
+            }
         }, onError: { error in
             //TODO: Handle error
         }).disposed(by: disposeBag)
@@ -109,10 +114,7 @@ extension TimelineViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle:   UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            viewModel?.removePostAt(index: indexPath.item)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
+            viewModel?.removePostAt(index: indexPath.item).subscribe().disposed(by: disposeBag)
         }
     }
 }

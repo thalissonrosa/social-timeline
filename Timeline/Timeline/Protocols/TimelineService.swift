@@ -12,5 +12,6 @@ protocol TimelineService {
 
     func createPost(_ message: String, from user: User) -> Completable
     func retrievePosts() -> Single<[Post]>
-    func startLiveUpdating() -> Observable<Post>
+    func startLiveUpdating() -> Observable<(post: Post, type: PostUpdateType)>
+    func removePost(_ post: Post) -> Completable
 }

@@ -9,27 +9,28 @@
 import Foundation
 import RxSwift
 
+typealias PostOperation = (post: Post, type: PostUpdateType, index: Int)
+
 final class TimelineViewModel {
 
     // MARK: - Properties
-    
+
+    private var posts: [Post] = []
+    private let insertIndex = 0
     let user: User
     let accountService: AccountService
     let timelineService: TimelineService
-    private var posts: [Post] = []
     var numberOfPosts: Int {
         return posts.count
     }
-    var newPosts: Observable<Post> {
-        //Firebase will always return the most recent data but we already retrieved it earlier, so we can ignore the first value if posts.count > 0
+    var newPosts: Observable<PostOperation> {
         return timelineService.startLiveUpdating()
-            .skip(posts.count > 0 ? 1 : 0)
-            .do(onNext: { [weak self] post in
-                self?.posts.insert(post, at: 0)
-        })
-    }
-    var insertPostIndexPath: IndexPath {
-        return IndexPath(item: 0, section: 0)
+            .map({ [weak self] (post, type) -> PostOperation? in
+                return self?.postOperation(from: post, type: type)
+            }).compactMap { $0 }
+            .do(onNext: { [weak self] postOperation in
+                self?.updateDataSource(postOperation: postOperation)
+            })
     }
 
     // MARK: - Init
@@ -56,8 +57,8 @@ final class TimelineViewModel {
         return posts[index]
     }
 
-    func removePostAt(index: Int) {
-        posts.remove(at: index)
+    func removePostAt(index: Int) -> Completable {
+        return timelineService.removePost(posts[index])
     }
 
     func retrieveAllPosts() -> Single<[Post]> {
@@ -67,5 +68,30 @@ final class TimelineViewModel {
             }.do(onSuccess: { [weak self] posts in
                 self?.posts = posts
             })
+    }
+}
+
+// MARK: - Private functions
+private extension TimelineViewModel {
+
+    func postOperation(from post: Post, type: PostUpdateType) -> PostOperation? {
+        switch type {
+        case .added:
+            return PostOperation(post: post, type: type, index: insertIndex)
+        case .removed:
+            guard let index = posts.firstIndex(where: { $0.databaseKey == post.databaseKey }) else {
+                return nil
+            }
+            return PostOperation(post: post, type: type, index: index)
+        }
+    }
+
+    func updateDataSource(postOperation: PostOperation) {
+        switch postOperation.type {
+        case .added:
+            posts.insert(postOperation.post, at: 0)
+        case .removed:
+            posts.remove(at: postOperation.index)
+        }
     }
 }

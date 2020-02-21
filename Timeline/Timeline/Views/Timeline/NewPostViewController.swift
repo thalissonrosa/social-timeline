@@ -36,7 +36,6 @@ class NewPostViewController: UIViewController {
 
     @IBAction func postPressed() {
         viewModel?.addPost().subscribe(onCompleted: { [weak self] in
-            print("POSTED")
             self?.dismiss(animated: true)
         }, onError: { error in
             print(error)
