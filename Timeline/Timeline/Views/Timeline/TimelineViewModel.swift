@@ -72,6 +72,7 @@ final class TimelineViewModel {
 }
 
 // MARK: - Private functions
+    
 private extension TimelineViewModel {
 
     func postOperation(from post: Post, type: PostUpdateType) -> PostOperation? {

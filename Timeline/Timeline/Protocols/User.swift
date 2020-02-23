@@ -11,5 +11,3 @@ protocol User {
     var username: String { get }
     var identifier: String { get }
 }
-
-

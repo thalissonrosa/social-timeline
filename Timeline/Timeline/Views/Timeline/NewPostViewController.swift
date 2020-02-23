@@ -16,6 +16,7 @@ class NewPostViewController: UIViewController {
     private let disposeBag = DisposeBag()
 
     // MARK: - Outlets
+    
     @IBOutlet private var headerLabel: UILabel!
     @IBOutlet private var cancelButton: UIButton!
     @IBOutlet private var postButton: UIButton!

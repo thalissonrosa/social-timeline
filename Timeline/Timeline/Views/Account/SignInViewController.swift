@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SignInViewController.swift
 //  Timeline
 //
 //  Created by Thalisson da Rosa on 15/02/20.

@@ -41,7 +41,6 @@ final class CreateAccountViewController: UIViewController {
     @IBAction func createAccountPressed() {
         displayLoadingHUD(message: AppStrings.loading.localized)
         viewModel.createAccount().subscribe(onCompleted: { [weak self] in
-            //TODO: Improve navigation, considering Coordinators
             self?.hideLoadingHUD()
             self?.navigationController?.popViewController(animated: true)
         }) { [weak self] error in

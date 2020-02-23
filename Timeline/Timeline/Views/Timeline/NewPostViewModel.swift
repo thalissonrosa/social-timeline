@@ -11,6 +11,8 @@ import RxSwift
 
 final class NewPostViewModel {
 
+    // MARK: Properties
+
     let user: User
     let timelineService: TimelineService
     var postMessage = BehaviorRelay<String?>(value: "")
@@ -21,10 +23,14 @@ final class NewPostViewModel {
         }
     }
 
+    // MARK: Init
+
     init(user: User, timelineService: TimelineService = FirebaseTimelineService()) {
         self.user = user
         self.timelineService = timelineService
     }
+
+    // MARK: Functions
 
     func addPost() -> Completable {
         guard let message = postMessage.value else {

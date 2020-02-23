@@ -44,6 +44,4 @@ class TimelineServiceMock: TimelineService {
     func removePost(_ post: Post) -> Completable {
         return Completable.empty()
     }
-
-
 }

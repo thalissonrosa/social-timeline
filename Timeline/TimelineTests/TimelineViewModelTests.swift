@@ -73,7 +73,6 @@ class TimelineViewModelTests: XCTestCase {
             XCTAssertEqual(post.user, "user \(count % 2)")
             XCTAssertEqual(post.timestamp, Double(count))
             XCTAssertEqual(post.databaseKey, "key\(count)")
-            print("### ITEM \(count) OK!")
             count -= 1
         }
     }
