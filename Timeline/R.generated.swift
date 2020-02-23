@@ -89,7 +89,7 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
   struct segue {
     /// This struct is generated for `SignInViewController`, and contains static references to 1 segues.
     struct signInViewController {
@@ -102,6 +102,23 @@ struct R: Rswift.Validatable {
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
       static func toCreateAccount(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, SignInViewController, CreateAccountViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.signInViewController.toCreateAccount, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This struct is generated for `TimelineViewController`, and contains static references to 1 segues.
+    struct timelineViewController {
+      /// Segue identifier `toNewPost`.
+      static let toNewPost: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, TimelineViewController, NewPostViewController> = Rswift.StoryboardSegueIdentifier(identifier: "toNewPost")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `toNewPost`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func toNewPost(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, TimelineViewController, NewPostViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.timelineViewController.toNewPost, segue: segue)
       }
       #endif
 
@@ -543,7 +560,9 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct timeline: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct timeline: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
+
       let bundle = R.hostingBundle
       let name = "Timeline"
       let newPostViewController = StoryboardViewControllerResource<NewPostViewController>(identifier: "NewPostViewController")

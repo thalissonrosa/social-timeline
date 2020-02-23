@@ -21,17 +21,19 @@ final class CreateAccountViewModel {
     var isCreateAccountButtonEnabled: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(),
                                         password.asObservable(),
-                                        passwordMatches) { email, password, matchingPassword in
+                                        confirmPassword.asObservable(),
+                                        passwordMatches) { email, password, confirm, matchingPassword in
             let emailCount = email?.count ?? 0
             let passwordCount = password?.count ?? 0
-            return emailCount > 0 && passwordCount > 0 && matchingPassword
+            let confirmCount = confirm?.count ?? 0
+            return emailCount > 0 && passwordCount > 0 && confirmCount > 0 && matchingPassword
         }.distinctUntilChanged()
     }
     var passwordMatches: Observable<Bool> {
         return Observable.combineLatest(password.asObservable(),
                                         confirmPassword.asObservable()) { password, confirmation in
             return password == confirmation
-        }
+        }.distinctUntilChanged()
     }
 
     // MARK: Init

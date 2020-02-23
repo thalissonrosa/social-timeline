@@ -32,12 +32,16 @@
 		07DA85CB23F86F6500442AF2 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DA85C923F86F6500442AF2 /* Account.storyboard */; };
 		07DA85CD23F86F6600442AF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07DA85CC23F86F6600442AF2 /* Assets.xcassets */; };
 		07DA85D023F86F6600442AF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DA85CE23F86F6600442AF2 /* LaunchScreen.storyboard */; };
-		07DA85DB23F86F6600442AF2 /* TimelineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA85DA23F86F6600442AF2 /* TimelineTests.swift */; };
 		07DA85E823F8763F00442AF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07DA85E723F8763F00442AF2 /* GoogleService-Info.plist */; };
 		07DA85EA23F87BBB00442AF2 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA85E923F87BBB00442AF2 /* SignInViewModel.swift */; };
 		07DA85EC23F884CD00442AF2 /* TimelineError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DA85EB23F884CD00442AF2 /* TimelineError.swift */; };
 		07FBC3382401FE960024F95F /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC3372401FE960024F95F /* UIViewController+Utils.swift */; };
 		07FBC33C24020EB10024F95F /* SocialTimelineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC33B24020EB10024F95F /* SocialTimelineTextField.swift */; };
+		07FBC33E2402F8430024F95F /* CreateAccountViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC33D2402F8430024F95F /* CreateAccountViewModelTests.swift */; };
+		07FBC3412402F8E40024F95F /* AccountServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC3402402F8E40024F95F /* AccountServiceMock.swift */; };
+		07FBC343240304770024F95F /* SignInViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC342240304770024F95F /* SignInViewModelTests.swift */; };
+		07FBC3452403062E0024F95F /* TimelineViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC3442403062E0024F95F /* TimelineViewModelTests.swift */; };
+		07FBC347240306BD0024F95F /* TimelineServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FBC346240306BD0024F95F /* TimelineServiceMock.swift */; };
 		07FDA84923FE43270015F541 /* PostUpdateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FDA84823FE43270015F541 /* PostUpdateType.swift */; };
 		31DA3A8531C73646672AE84D /* Pods_TimelineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC296D05773CDE864404A3C0 /* Pods_TimelineTests.framework */; };
 		A358DC1AB13C5B6FC0B5CB22 /* Pods_Timeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E589A2DC6D1452628728B10B /* Pods_Timeline.framework */; };
@@ -82,13 +86,17 @@
 		07DA85CF23F86F6600442AF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07DA85D123F86F6600442AF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07DA85D623F86F6600442AF2 /* TimelineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimelineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07DA85DA23F86F6600442AF2 /* TimelineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTests.swift; sourceTree = "<group>"; };
 		07DA85DC23F86F6600442AF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07DA85E723F8763F00442AF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07DA85E923F87BBB00442AF2 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		07DA85EB23F884CD00442AF2 /* TimelineError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineError.swift; sourceTree = "<group>"; };
 		07FBC3372401FE960024F95F /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		07FBC33B24020EB10024F95F /* SocialTimelineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialTimelineTextField.swift; sourceTree = "<group>"; };
+		07FBC33D2402F8430024F95F /* CreateAccountViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModelTests.swift; sourceTree = "<group>"; };
+		07FBC3402402F8E40024F95F /* AccountServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountServiceMock.swift; sourceTree = "<group>"; };
+		07FBC342240304770024F95F /* SignInViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModelTests.swift; sourceTree = "<group>"; };
+		07FBC3442403062E0024F95F /* TimelineViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewModelTests.swift; sourceTree = "<group>"; };
+		07FBC346240306BD0024F95F /* TimelineServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineServiceMock.swift; sourceTree = "<group>"; };
 		07FDA84823FE43270015F541 /* PostUpdateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUpdateType.swift; sourceTree = "<group>"; };
 		36A7AF33DDC9C4566012ED1E /* Pods-Timeline.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timeline.release.xcconfig"; path = "Target Support Files/Pods-Timeline/Pods-Timeline.release.xcconfig"; sourceTree = "<group>"; };
 		619352D84A13E067AB13D8F6 /* Pods-TimelineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimelineTests.debug.xcconfig"; path = "Target Support Files/Pods-TimelineTests/Pods-TimelineTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -260,8 +268,11 @@
 		07DA85D923F86F6600442AF2 /* TimelineTests */ = {
 			isa = PBXGroup;
 			children = (
-				07DA85DA23F86F6600442AF2 /* TimelineTests.swift */,
+				07FBC33F2402F8D10024F95F /* Mocks */,
 				07DA85DC23F86F6600442AF2 /* Info.plist */,
+				07FBC33D2402F8430024F95F /* CreateAccountViewModelTests.swift */,
+				07FBC342240304770024F95F /* SignInViewModelTests.swift */,
+				07FBC3442403062E0024F95F /* TimelineViewModelTests.swift */,
 			);
 			path = TimelineTests;
 			sourceTree = "<group>";
@@ -280,6 +291,15 @@
 				07FBC33B24020EB10024F95F /* SocialTimelineTextField.swift */,
 			);
 			path = "Custom Components";
+			sourceTree = "<group>";
+		};
+		07FBC33F2402F8D10024F95F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				07FBC3402402F8E40024F95F /* AccountServiceMock.swift */,
+				07FBC346240306BD0024F95F /* TimelineServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		0E759751CA120287FB705DB2 /* Pods */ = {
@@ -333,6 +353,7 @@
 				07DA85D223F86F6600442AF2 /* Sources */,
 				07DA85D323F86F6600442AF2 /* Frameworks */,
 				07DA85D423F86F6600442AF2 /* Resources */,
+				924104AC0045222EEDD42C6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -448,6 +469,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		924104AC0045222EEDD42C6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimelineTests/Pods-TimelineTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimelineTests/Pods-TimelineTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimelineTests/Pods-TimelineTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C26CA586B4CEF8D85CA78361 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,7 +563,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07DA85DB23F86F6600442AF2 /* TimelineTests.swift in Sources */,
+				07FBC343240304770024F95F /* SignInViewModelTests.swift in Sources */,
+				07FBC3412402F8E40024F95F /* AccountServiceMock.swift in Sources */,
+				07FBC347240306BD0024F95F /* TimelineServiceMock.swift in Sources */,
+				07FBC33E2402F8430024F95F /* CreateAccountViewModelTests.swift in Sources */,
+				07FBC3452403062E0024F95F /* TimelineViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

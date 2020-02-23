@@ -16,6 +16,8 @@ target 'Timeline' do
   target 'TimelineTests' do
     inherit! :search_paths
     # Pods for testing
+  pod 'RxTest' 
+  pod 'RxBlocking'
   end
 
 end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zl6-ud-a0Q">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -76,7 +76,7 @@
                         <outlet property="newPostButton" destination="9rP-ax-Z31" id="crH-yz-dLV"/>
                         <outlet property="timelineTableView" destination="yzo-RL-wfm" id="Gey-yw-OnV"/>
                         <outlet property="titleLabel" destination="24G-UI-oEv" id="Pk9-FK-mWn"/>
-                        <segue destination="oIi-SV-G0Y" kind="presentation" id="rsh-fj-JnO"/>
+                        <segue destination="oIi-SV-G0Y" kind="presentation" identifier="toNewPost" id="rsh-fj-JnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VkE-Jk-aCw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
