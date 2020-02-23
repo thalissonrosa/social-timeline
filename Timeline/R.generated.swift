@@ -183,14 +183,18 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 16 localization keys.
     struct localizable {
+      /// Value: Authentication Error
+      static let authError = Rswift.StringResource(key: "authError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Confirm Password
       static let confirmPassword = Rswift.StringResource(key: "confirmPassword", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Create Account
       static let createAccount = Rswift.StringResource(key: "createAccount", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Email
       static let email = Rswift.StringResource(key: "email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Error
+      static let genericError = Rswift.StringResource(key: "genericError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Login
       static let login = Rswift.StringResource(key: "login", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Logout
@@ -199,14 +203,33 @@ struct R: Rswift.Validatable {
       static let missingEmailPassword = Rswift.StringResource(key: "missingEmailPassword", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: New Post
       static let newPost = Rswift.StringResource(key: "newPost", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: OK
+      static let ok = Rswift.StringResource(key: "ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Password
       static let password = Rswift.StringResource(key: "password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Password and Confirm Password mismatch
       static let passwordMismatch = Rswift.StringResource(key: "passwordMismatch", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Please wait...
+      static let loading = Rswift.StringResource(key: "loading", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Timeline
       static let title = Rswift.StringResource(key: "title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Timeline Error
+      static let timelineError = Rswift.StringResource(key: "timelineError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Welcome to Social Timeline
       static let welcome = Rswift.StringResource(key: "welcome", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Authentication Error
+      static func authError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("authError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "authError"
+        }
+
+        return NSLocalizedString("authError", bundle: bundle, comment: "")
+      }
 
       /// Value: Confirm Password
       static func confirmPassword(preferredLanguages: [String]? = nil) -> String {
@@ -245,6 +268,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("email", bundle: bundle, comment: "")
+      }
+
+      /// Value: Error
+      static func genericError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("genericError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "genericError"
+        }
+
+        return NSLocalizedString("genericError", bundle: bundle, comment: "")
       }
 
       /// Value: Login
@@ -299,6 +335,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("newPost", bundle: bundle, comment: "")
       }
 
+      /// Value: OK
+      static func ok(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ok", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ok"
+        }
+
+        return NSLocalizedString("ok", bundle: bundle, comment: "")
+      }
+
       /// Value: Password
       static func password(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -325,6 +374,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("passwordMismatch", bundle: bundle, comment: "")
       }
 
+      /// Value: Please wait...
+      static func loading(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("loading", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "loading"
+        }
+
+        return NSLocalizedString("loading", bundle: bundle, comment: "")
+      }
+
       /// Value: Timeline
       static func title(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -336,6 +398,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("title", bundle: bundle, comment: "")
+      }
+
+      /// Value: Timeline Error
+      static func timelineError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("timelineError", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "timelineError"
+        }
+
+        return NSLocalizedString("timelineError", bundle: bundle, comment: "")
       }
 
       /// Value: Welcome to Social Timeline

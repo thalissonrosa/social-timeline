@@ -11,7 +11,7 @@ import RxCocoa
 
 protocol AccountService {
 
-    func signIn(username: String, password: String) -> Observable<User>
+    func signIn(username: String, password: String) -> Single<User>
     func createAccount(username: String, password: String, confirmPassword: String) -> Completable
     func logout() -> Completable
 }

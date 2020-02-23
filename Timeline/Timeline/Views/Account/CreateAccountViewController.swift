@@ -38,12 +38,14 @@ final class CreateAccountViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func createAccount() {
+        displayLoadingHUD(message: AppStrings.loading.localized)
         viewModel.createAccount().subscribe(onCompleted: { [weak self] in
             //TODO: Improve navigation, considering Coordinators
+            self?.hideLoadingHUD()
             self?.navigationController?.popViewController(animated: true)
-        }) { error in
-            print(error)
-            //TODO: Display error message to the user
+        }) { [weak self] error in
+            self?.hideLoadingHUD()
+            self?.displayAppErrorAlert(error: error)
         }.disposed(by: disposeBag)
     }
 }

@@ -43,8 +43,8 @@ class TimelineViewController: UIViewController {
     @IBAction func logoutPressed() {
         viewModel?.logout().subscribe(onCompleted: { [weak self] in
             self?.navigationController?.popViewController(animated: true)
-        }, onError: { error in
-            //TODO: Display error
+        }, onError: { [weak self] error in
+            self?.displayAppErrorAlert(error: error)
         }).disposed(by: disposeBag)
     }
 
@@ -73,9 +73,8 @@ private extension TimelineViewController {
         viewModel?.retrieveAllPosts().asCompletable().subscribe(onCompleted: { [weak self] in
             self?.timelineTableView.reloadData()
             self?.startLiveUpdating()
-        }, onError: { error in
-            //TODO: Display error to the user
-            print("ERROR")
+        }, onError: { [weak self] error in
+            self?.displayAppErrorAlert(error: error)
         }).disposed(by: disposeBag)
     }
 
@@ -88,8 +87,8 @@ private extension TimelineViewController {
             case .removed:
                 self?.timelineTableView.deleteRows(at: [indexPath], with: .automatic)
             }
-        }, onError: { error in
-            //TODO: Handle error
+        }, onError: { [weak self] error in
+            self?.displayAppErrorAlert(error: error)
         }).disposed(by: disposeBag)
     }
 }

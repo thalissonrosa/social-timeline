@@ -50,6 +50,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.3.1)
   - leveldb-library (1.22)
+  - MBProgressHUD (1.2.0)
   - nanopb (0.3.9011):
     - nanopb/decode (= 0.3.9011)
     - nanopb/encode (= 0.3.9011)
@@ -68,6 +69,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
+  - MBProgressHUD (~> 1.2.0)
   - R.swift
   - RxCocoa
   - RxSwift
@@ -86,6 +88,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
+    - MBProgressHUD
     - nanopb
     - R.swift
     - R.swift.Library
@@ -106,6 +109,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
   GTMSessionFetcher: cea130bbfe5a7edc8d06d3f0d17288c32ffe9925
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
   R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
@@ -113,6 +117,6 @@ SPEC CHECKSUMS:
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
 
-PODFILE CHECKSUM: 31e9ebe3151f67f70fc207818d110f1cda12d411
+PODFILE CHECKSUM: d8dd553f2a14fa50a77a66b2376174570e701227
 
 COCOAPODS: 1.8.4

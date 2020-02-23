@@ -20,10 +20,17 @@ enum AppStrings: String {
     case password
     case passwordMismatch
 
-    //MARK: - General
+    // MARK: - Errors
+    case authError
+    case genericError
+    case timelineError
+
+    // MARK: - General
+    case loading
+    case ok
     case welcome
 
-    //MARK: - Timeline
+    // MARK: - Timeline
     case title
     case newPost
     case logout

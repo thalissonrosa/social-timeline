@@ -12,18 +12,17 @@ import RxSwift
 
 struct FirebaseAccountService: AccountService {
 
-    func signIn(username: String, password: String) -> Observable<User> {
-        return Observable.create { observer in
+    func signIn(username: String, password: String) -> Single<User> {
+        return Single.create { single in
             Auth.auth().signIn(withEmail: username, password: password) { (result, error) in
                 guard let responseUser = result?.user else {
                     let error = TimelineError(message: error?.localizedDescription,
                                               errorCode: .authError)
-                    observer.on(.error(error))
+                    single(.error(error))
                     return
                 }
                 let firebaseUser = FirebaseUser(user: responseUser)
-                observer.on(.next(firebaseUser))
-                observer.on(.completed)
+                single(.success(firebaseUser))
             }
             return Disposables.create()
         }

@@ -11,6 +11,7 @@ target 'Timeline' do
   pod 'RxCocoa'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'MBProgressHUD', '~> 1.2.0'
 
   target 'TimelineTests' do
     inherit! :search_paths

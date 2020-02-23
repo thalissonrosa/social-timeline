@@ -15,7 +15,14 @@
 "password" = "Password";
 "passwordMismatch" = "Password and Confirm Password mismatch";
 
+// MARK: - Errors
+"authError" = "Authentication Error";
+"genericError" = "Error";
+"timelineError" = "Timeline Error";
+
 //MARK: - General
+"loading" = "Please wait...";
+"ok" = "OK";
 "welcome" = "Welcome to Social Timeline";
 
 //MARK: - Timeline

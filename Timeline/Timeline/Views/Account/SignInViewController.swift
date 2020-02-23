@@ -6,6 +6,7 @@
 //  Copyright © 2020 Thalisson da Rosa. All rights reserved.
 //
 
+import MBProgressHUD
 import RxCocoa
 import RxSwift
 import UIKit
@@ -16,6 +17,7 @@ final class SignInViewController: UIViewController {
 
     var viewModel: SignInViewModel = SignInViewModel()
     private let disposeBag = DisposeBag()
+    private var loadingHUD: MBProgressHUD?
 
     // MARK: - IBOutlets
 
@@ -36,17 +38,19 @@ final class SignInViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction func loginPressed() {
-        viewModel.login().subscribe(onNext: { user in
-
+        displayLoadingHUD(message: AppStrings.loading.localized)
+        viewModel.login().subscribe(onSuccess: { [weak self] user in
             guard let timelineController = R.storyboard.timeline.timelineViewController() else {
                 return
             }
             let viewModel = TimelineViewModel(user: user)
             timelineController.viewModel = viewModel
-            self.navigationController?.pushViewController(timelineController,
+            self?.hideLoadingHUD()
+            self?.navigationController?.pushViewController(timelineController,
                                                           animated: true)
-        }, onError: { error in
-            //TODO: Display the error to the user
+        }, onError: { [weak self] error in
+            self?.hideLoadingHUD()
+            self?.displayAppErrorAlert(error: error)
         }).disposed(by: disposeBag)
     }
 

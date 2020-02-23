@@ -12,6 +12,17 @@ enum ErrorCode {
     case genericError
     case authError
     case timelineError
+
+    var title: String {
+        switch self {
+        case .genericError:
+            return AppStrings.genericError.localized
+        case .authError:
+            return AppStrings.authError.localized
+        case .timelineError:
+            return AppStrings.timelineError.localized
+        }
+    }
 }
 
 protocol GenericError: Error {

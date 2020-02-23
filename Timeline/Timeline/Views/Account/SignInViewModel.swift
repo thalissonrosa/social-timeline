@@ -27,11 +27,11 @@ final class SignInViewModel {
         self.accountService = accountService
     }
 
-    func login() -> Observable<User> {
+    func login() -> Single<User> {
         guard let email = email.value, let password = password.value else {
             let error = TimelineError(message: AppStrings.missingEmailPassword.localized,
                                       errorCode: .genericError)
-            return Observable.error(error)
+            return Single.error(error)
         }
         return accountService.signIn(username: email, password: password)
     }
