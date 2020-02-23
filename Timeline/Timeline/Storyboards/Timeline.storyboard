@@ -111,24 +111,26 @@
                                     <action selector="cancelPressed" destination="oIi-SV-G0Y" eventType="touchUpInside" id="BRC-6C-R2T"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add your post here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4gG-SL-6ak">
-                                <rect key="frame" x="20" y="61.5" width="374" height="746.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kc6-Ij-KuI">
+                                <rect key="frame" x="20" y="68.5" width="374" height="719.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="GU4-qs-Yyo" firstAttribute="trailing" secondItem="4gG-SL-6ak" secondAttribute="trailing" constant="20" id="1n6-Qg-vkC"/>
-                            <constraint firstItem="4gG-SL-6ak" firstAttribute="top" secondItem="pJ6-mi-rZs" secondAttribute="bottom" constant="20" id="4cN-rf-A6c"/>
+                            <constraint firstItem="Kc6-Ij-KuI" firstAttribute="leading" secondItem="GU4-qs-Yyo" secondAttribute="leading" constant="20" id="B2c-po-tQ0"/>
                             <constraint firstItem="cic-sW-hkR" firstAttribute="firstBaseline" secondItem="9Ie-7W-o1f" secondAttribute="firstBaseline" id="DPA-t2-iwr"/>
+                            <constraint firstItem="GU4-qs-Yyo" firstAttribute="trailing" secondItem="Kc6-Ij-KuI" secondAttribute="trailing" constant="20" id="HeQ-be-e9e"/>
+                            <constraint firstItem="Kc6-Ij-KuI" firstAttribute="top" secondItem="9Ie-7W-o1f" secondAttribute="bottom" constant="20" id="Ieg-2A-dXe"/>
                             <constraint firstItem="9Ie-7W-o1f" firstAttribute="firstBaseline" secondItem="pJ6-mi-rZs" secondAttribute="firstBaseline" constant="2" id="Lg6-XU-kCP"/>
-                            <constraint firstItem="4gG-SL-6ak" firstAttribute="leading" secondItem="GU4-qs-Yyo" secondAttribute="leading" constant="20" id="Z7Y-hh-gnS"/>
                             <constraint firstItem="pJ6-mi-rZs" firstAttribute="top" secondItem="GU4-qs-Yyo" secondAttribute="top" constant="20" id="axp-c7-Wbh"/>
                             <constraint firstItem="GU4-qs-Yyo" firstAttribute="trailing" secondItem="cic-sW-hkR" secondAttribute="trailing" constant="20" id="byq-3t-uiF"/>
                             <constraint firstItem="9Ie-7W-o1f" firstAttribute="leading" secondItem="GU4-qs-Yyo" secondAttribute="leading" constant="20" id="fLI-FV-9CZ"/>
                             <constraint firstItem="pJ6-mi-rZs" firstAttribute="centerX" secondItem="GU4-qs-Yyo" secondAttribute="centerX" id="h42-zG-sPq"/>
-                            <constraint firstItem="GU4-qs-Yyo" firstAttribute="bottom" secondItem="4gG-SL-6ak" secondAttribute="bottom" id="qtf-0D-49k"/>
+                            <constraint firstItem="GU4-qs-Yyo" firstAttribute="bottom" secondItem="Kc6-Ij-KuI" secondAttribute="bottom" constant="20" id="rUZ-Fu-43R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GU4-qs-Yyo"/>
                     </view>
@@ -136,7 +138,7 @@
                         <outlet property="cancelButton" destination="9Ie-7W-o1f" id="MVU-E4-uD4"/>
                         <outlet property="headerLabel" destination="pJ6-mi-rZs" id="cnb-Tr-ac9"/>
                         <outlet property="postButton" destination="cic-sW-hkR" id="y7w-yh-6W9"/>
-                        <outlet property="postTextField" destination="4gG-SL-6ak" id="XyG-XP-hs3"/>
+                        <outlet property="postTextView" destination="Kc6-Ij-KuI" id="uYP-vn-Z7H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ncf-MZ-pOW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

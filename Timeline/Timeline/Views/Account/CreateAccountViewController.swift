@@ -21,11 +21,12 @@ final class CreateAccountViewController: UIViewController {
     // MARK: - Outlets
 
     @IBOutlet private var headerLabel: UILabel!
-    @IBOutlet private var emailTextField: UITextField!
-    @IBOutlet private var passwordTextField: UITextField!
-    @IBOutlet private var confirmPasswordTextField: UITextField!
+    @IBOutlet private var emailTextField: SocialTimelineTextField!
+    @IBOutlet private var passwordTextField: SocialTimelineTextField!
+    @IBOutlet private var confirmPasswordTextField: SocialTimelineTextField!
     @IBOutlet private var passwordMismatchLabel: UILabel!
     @IBOutlet private var createAccountButton: UIButton!
+    @IBOutlet private var backButton: UIButton!
 
     // MARK: - Life cycle
 
@@ -37,7 +38,7 @@ final class CreateAccountViewController: UIViewController {
 
     // MARK: - IBActions
 
-    @IBAction func createAccount() {
+    @IBAction func createAccountPressed() {
         displayLoadingHUD(message: AppStrings.loading.localized)
         viewModel.createAccount().subscribe(onCompleted: { [weak self] in
             //TODO: Improve navigation, considering Coordinators
@@ -47,6 +48,10 @@ final class CreateAccountViewController: UIViewController {
             self?.hideLoadingHUD()
             self?.displayAppErrorAlert(error: error)
         }.disposed(by: disposeBag)
+    }
+
+    @IBAction func backPressed() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -79,5 +84,6 @@ private extension CreateAccountViewController {
         confirmPasswordTextField.placeholder = AppStrings.confirmPassword.localized
         passwordMismatchLabel.text = AppStrings.passwordMismatch.localized
         createAccountButton.setTitle(AppStrings.createAccount.localized, for: .normal)
+        backButton.setTitle(AppStrings.back.localized, for: .normal)
     }
 }

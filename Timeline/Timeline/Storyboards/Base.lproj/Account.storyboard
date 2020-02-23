@@ -16,15 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDw-lB-asi">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HDw-lB-asi" customClass="SocialTimelineTextField" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="30" y="225" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                <connections>
+                                    <outlet property="nextFieldResponder" destination="7xw-7P-EQE" id="MaB-3u-lwK"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xw-7P-EQE">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xw-7P-EQE" customClass="SocialTimelineTextField" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="30" y="279" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoR-xg-dcy">
                                 <rect key="frame" x="188" y="338" width="38" height="30"/>
@@ -93,26 +96,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L80-OF-oQb">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L80-OF-oQb" customClass="SocialTimelineTextField" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="30" y="225" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
+                                <connections>
+                                    <outlet property="nextFieldResponder" destination="lX0-TI-ASs" id="0am-Zl-kUb"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lX0-TI-ASs">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lX0-TI-ASs" customClass="SocialTimelineTextField" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="30" y="279" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="nextFieldResponder" destination="Awv-S0-Dwv" id="Mun-5g-csX"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Awv-S0-Dwv">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Awv-S0-Dwv" customClass="SocialTimelineTextField" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="30" y="333" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pP7-7Q-PgC">
                                 <rect key="frame" x="153.5" y="407" width="107" height="30"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <action selector="createAccount" destination="KEf-41-dJk" eventType="touchUpInside" id="Og6-VC-Ajl"/>
+                                    <action selector="createAccountPressed" destination="KEf-41-dJk" eventType="touchUpInside" id="sWw-KU-bj9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password and Confirm Password mismatch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xt3-UH-EqH">
@@ -121,11 +130,19 @@
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Gi-wc-TNj">
+                                <rect key="frame" x="20" y="64" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backPressed" destination="KEf-41-dJk" eventType="touchUpInside" id="pXu-gN-e9X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="L80-OF-oQb" firstAttribute="top" secondItem="EPW-Sv-anV" secondAttribute="bottom" constant="40" id="9Bj-Ur-92g"/>
                             <constraint firstItem="pP7-7Q-PgC" firstAttribute="centerX" secondItem="Wb8-f4-5Ul" secondAttribute="centerX" id="B11-Yi-fng"/>
+                            <constraint firstItem="8Gi-wc-TNj" firstAttribute="top" secondItem="Wb8-f4-5Ul" secondAttribute="top" constant="20" id="CcA-mp-1O5"/>
                             <constraint firstItem="lX0-TI-ASs" firstAttribute="leading" secondItem="L80-OF-oQb" secondAttribute="leading" id="IDl-RJ-SmC"/>
                             <constraint firstItem="L80-OF-oQb" firstAttribute="leading" secondItem="Wb8-f4-5Ul" secondAttribute="leading" constant="30" id="KJl-KG-x9v"/>
                             <constraint firstItem="xt3-UH-EqH" firstAttribute="top" secondItem="Awv-S0-Dwv" secondAttribute="bottom" constant="4" id="RMd-jm-rpk"/>
@@ -137,6 +154,7 @@
                             <constraint firstItem="xt3-UH-EqH" firstAttribute="trailing" secondItem="Awv-S0-Dwv" secondAttribute="trailing" id="g2D-fX-d1C"/>
                             <constraint firstItem="Awv-S0-Dwv" firstAttribute="leading" secondItem="lX0-TI-ASs" secondAttribute="leading" id="lZm-Sk-RlL"/>
                             <constraint firstItem="xt3-UH-EqH" firstAttribute="leading" secondItem="Awv-S0-Dwv" secondAttribute="leading" id="ld6-7E-MnM"/>
+                            <constraint firstItem="8Gi-wc-TNj" firstAttribute="leading" secondItem="Wb8-f4-5Ul" secondAttribute="leading" constant="20" id="qDU-Dg-MLf"/>
                             <constraint firstItem="Wb8-f4-5Ul" firstAttribute="trailing" secondItem="L80-OF-oQb" secondAttribute="trailing" constant="30" id="qoN-1H-fDf"/>
                             <constraint firstItem="pP7-7Q-PgC" firstAttribute="top" secondItem="Awv-S0-Dwv" secondAttribute="bottom" constant="40" id="twE-7H-OTR"/>
                             <constraint firstItem="Awv-S0-Dwv" firstAttribute="trailing" secondItem="lX0-TI-ASs" secondAttribute="trailing" id="uQH-IC-wKu"/>
@@ -145,6 +163,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZUu-Fc-xdk"/>
                     <connections>
+                        <outlet property="backButton" destination="8Gi-wc-TNj" id="S8e-h3-tZl"/>
                         <outlet property="confirmPasswordTextField" destination="Awv-S0-Dwv" id="3Xd-8h-IiL"/>
                         <outlet property="createAccountButton" destination="pP7-7Q-PgC" id="Nhq-1m-1X0"/>
                         <outlet property="emailTextField" destination="L80-OF-oQb" id="59j-vz-d0a"/>

@@ -19,9 +19,9 @@ class NewPostViewController: UIViewController {
     @IBOutlet private var headerLabel: UILabel!
     @IBOutlet private var cancelButton: UIButton!
     @IBOutlet private var postButton: UIButton!
-    @IBOutlet private var postTextField: UITextField! {
+    @IBOutlet private var postTextView: UITextView! {
         didSet {
-            postTextField.contentVerticalAlignment = .top
+            postTextView.becomeFirstResponder()
         }
     }
 
@@ -53,7 +53,7 @@ private extension NewPostViewController {
 
     func setupBindings() {
         guard let viewModel = viewModel else { return }
-        postTextField.rx.text
+        postTextView.rx.text
             .bind(to: viewModel.postMessage)
             .disposed(by: disposeBag)
         viewModel.isPostButtonEnabled

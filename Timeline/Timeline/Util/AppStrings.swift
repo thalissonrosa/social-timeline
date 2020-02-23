@@ -26,6 +26,7 @@ enum AppStrings: String {
     case timelineError
 
     // MARK: - General
+    case back
     case loading
     case ok
     case welcome

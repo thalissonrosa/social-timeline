@@ -21,6 +21,7 @@
 "timelineError" = "Timeline Error";
 
 //MARK: - General
+"back" = "Back";
 "loading" = "Please wait...";
 "ok" = "OK";
 "welcome" = "Welcome to Social Timeline";

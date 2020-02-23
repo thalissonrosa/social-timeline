@@ -183,10 +183,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 16 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 17 localization keys.
     struct localizable {
       /// Value: Authentication Error
       static let authError = Rswift.StringResource(key: "authError", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Back
+      static let back = Rswift.StringResource(key: "back", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Confirm Password
       static let confirmPassword = Rswift.StringResource(key: "confirmPassword", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Create Account
@@ -229,6 +231,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("authError", bundle: bundle, comment: "")
+      }
+
+      /// Value: Back
+      static func back(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("back", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "back"
+        }
+
+        return NSLocalizedString("back", bundle: bundle, comment: "")
       }
 
       /// Value: Confirm Password

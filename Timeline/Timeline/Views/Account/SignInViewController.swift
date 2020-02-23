@@ -22,8 +22,8 @@ final class SignInViewController: UIViewController {
     // MARK: - IBOutlets
 
     @IBOutlet private var welcomeLabel: UILabel!
-    @IBOutlet private var emailTextField: UITextField!
-    @IBOutlet private var passwordTextField: UITextField!
+    @IBOutlet private var emailTextField: SocialTimelineTextField! 
+    @IBOutlet private var passwordTextField: SocialTimelineTextField!
     @IBOutlet private var loginButton: UIButton!
     @IBOutlet private var createAccountButton: UIButton!
 
