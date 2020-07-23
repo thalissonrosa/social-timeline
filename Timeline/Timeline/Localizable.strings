@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  Timeline
+
+  Created by Thalisson da Rosa on 15/02/20.
+  Copyright © 2020 Thalisson da Rosa. All rights reserved.
+*/
+
+// MARK: - Account
+"confirmPassword" = "Confirm Password";
+"createAccount" = "Create Account";
+"email" = "Email";
+"login" = "Login";
+"missingEmailPassword" = "Missing email/password";
+"password" = "Password";
+"passwordMismatch" = "Password and Confirm Password mismatch";
+
+// MARK: - Errors
+"authError" = "Authentication Error";
+"genericError" = "Error";
+"timelineError" = "Timeline Error";
+
+//MARK: - General
+"back" = "Back";
+"loading" = "Please wait...";
+"ok" = "OK";
+"welcome" = "Welcome to Social Timeline";
+
+//MARK: - Timeline
+"title" = "Timeline";
+"newPost" = "New Post";
+"logout" = "Logout";
